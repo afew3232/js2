@@ -1,0 +1,12 @@
+<div class="post-index">
+	<div class="post-index-inner">
+
+		<% @posts.each do |f| %>
+			<h1><%= f.id %>:<%= f.title %></h1>
+			<p><%= f.text %></p>
+			<p><%= link_to "Edit", edit_post_path(f.id) %></p>
+			<p><%= link_to "Destroy", post_path(f.id), method: :delete,data: {confirm: "Are you sure?"} %>
+		<% end %>
+
+	</div>
+</div>
